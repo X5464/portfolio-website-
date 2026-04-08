@@ -16,24 +16,38 @@ const MAIN_IMAGES = [mainm, mainm2, mainf];
 
 const REVEAL_CONTENT = [
   {
-    upper: ["name: Rajarshi Chakraborty", "age:20"],
-    lower: "major: computer science",
+    upper: [
+      "Class: Offensive Security & Blue Team Defense",
+      "I bridge the gap between offensive security and Blue Team defense.",
+      "I leverage ethical hacking and threat intelligence to hunt down",
+      "vulnerabilities, then apply rigorous system audits and secure",
+      "architecture practices to fortify the infrastructure.",
+      "I know how to break systems, and exactly how to secure them."
+    ],
+    lower: ["About me",
+    ]
   },
   {
     upper: [
-      "Cleopatra lived closer to the Moon landing than to the building of the pyramids.",
-      "Vikings kept cats on ships for pest control (and vibes).",
-      "In medieval Europe, animals could be put on trial for crimes",
+      "Surviving The Grind",
+      "I successfully survived a grueling 60-hour non-stop",
+      "Capture The Flag endurance hacking competition.",
+      "When I step away from the terminal, I completely unplug",
+      "by playing the guitar and painting with watercolors.",
+      "I am highly fascinated by Cybersecurity",
     ],
-    lower: "abbove is some history fun fact",
+    lower: "Fun Fact About Me",
   },
   {
     upper: [
-      "Oxford University founding is older than the Aztec Empire.",
-      "The shortest war in history lasted 38–45 minutes (Britain vs Zanzibar).",
-      "Humans have been writing for ~5,000 years",
+      "Some project Insides",
+      "(Blue Team Defense): I built Sentinel AI, a live Threat",
+      "Intelligence dashboard used to centralize real-time enterprise threats.",
+      "(Offensive Recon): I built a Python web crawlers to automate reconnaissance",
+      "(Hardware Security): I engineered a decentralized agricultural IoT",
+      "device to process health data offline ensuring absolute data privacy."
     ],
-    lower: "yes it's a place holder",
+    lower: "Wired Fact About Me",
   },
 ];
 
@@ -262,47 +276,78 @@ export default function AboutMe() {
         }
         .sc-reveal-upper-bar {
           position: absolute;
-          top: 10%;
+          top: 8%;
           left: 0%;
           width: 100%;
-          height: 40%;
+          height: 44%;
           background: rgba(0, 0, 0, 0.92);
           clip-path: polygon(0 0, 100% 0, calc(100% - 22px) 100%, 0 100%);
           box-shadow: 0 0 0 1px rgba(255,255,255,0.06);
           display: flex;
           flex-direction: column;
-          align-items: center;
+          align-items: flex-start;
           justify-content: center;
-          gap: 10px;
-          color: #fff;
-          text-align: center;
+          gap: 6px;
+          color: rgba(255, 255, 255, 0.95);
+          text-align: left;
+          padding-left: 25%;
+          padding-right: 8%;
         }
+
         .sc-reveal-upper-line {
           font-family: 'Montserrat', sans-serif;
-          font-weight: 300;
-          font-size: 20px;
-          letter-spacing: 0.5px;
-          line-height: 1.15;
+          font-weight: 400;
+          font-size: 19px;
+          letter-spacing: 0.4px;
+          line-height: 1.35;
+          text-shadow: 1px 1px 0px #000, 2px 2px 4px rgba(0,0,0,0.8);
+          opacity: 0;
+          transform: translateX(-15px);
+          animation: sc-line-enter 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
+
+        .sc-reveal-upper-line:nth-child(1) { 
+          animation-delay: 0.3s; 
+          font-weight: 700; 
+          color: #4a8fff; 
+          font-size: 22px; 
+          text-transform: uppercase; 
+          letter-spacing: 1.5px;
+          margin-bottom: 4px;
+        }
+        .sc-reveal-upper-line:nth-child(2) { animation-delay: 0.38s; }
+        .sc-reveal-upper-line:nth-child(3) { animation-delay: 0.46s; }
+        .sc-reveal-upper-line:nth-child(4) { animation-delay: 0.54s; }
+        .sc-reveal-upper-line:nth-child(5) { animation-delay: 0.62s; }
+        .sc-reveal-upper-line:nth-child(6) { animation-delay: 0.70s; }
+        .sc-reveal-upper-line:nth-child(7) { animation-delay: 0.78s; }
+
+        @keyframes sc-line-enter {
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
         .sc-reveal-lower-bar {
           position: absolute;
-          top: 58%;
+          top: 60%;
           right: 0;
-          width: 48%;
-          height: 20%;
-          background: rgba(0, 0, 0, 0.92);
+          width: 55%;
+          height: 18%;
+          background: rgba(0, 0, 0, 0.95);
           clip-path: polygon(0 0, 100% 0, calc(100% - 22px) 100%, 0 100%);
-          box-shadow: 0 0 0 1px rgba(255,255,255,0.06);
+          box-shadow: -4px 4px 0px rgba(0,0,0,0.3), inset 2px 0 0 #c4001a;
           display: flex;
           align-items: center;
           justify-content: flex-start;
           color: #fff;
-          font-family: 'Montserrat', sans-serif;
-          font-weight: 300;
-          font-size: 22px;
-          letter-spacing: 0.4px;
-          text-transform: lowercase;
-          padding-left: 22px;
+          font-family: 'Bebas Neue', sans-serif;
+          font-weight: 400;
+          font-size: 32px;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          padding-left: 28px;
         }
 
         @keyframes sc-right-nav-pop {
