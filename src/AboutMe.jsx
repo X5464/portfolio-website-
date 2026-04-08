@@ -16,7 +16,7 @@ const MAIN_IMAGES = [mainm, mainm2, mainf];
 
 const REVEAL_CONTENT = [
   {
-    upper: ["name moneybagg", "age:23"],
+    upper: ["name: Rajarshi Chakraborty", "age:20"],
     lower: "major: computer science",
   },
   {
@@ -39,8 +39,8 @@ const REVEAL_CONTENT = [
 
 const ROLES = [
   { text: "LEADER", color: "#e8c100", bg: "rgba(232,193,0,0.12)", border: "rgba(232,193,0,0.5)" },
-  { text: "PARTY",  color: "#4a8fff", bg: "rgba(74,143,255,0.12)", border: "rgba(74,143,255,0.5)" },
-  { text: "PARTY",  color: "#4a8fff", bg: "rgba(74,143,255,0.12)", border: "rgba(74,143,255,0.5)" },
+  { text: "PARTY", color: "#4a8fff", bg: "rgba(74,143,255,0.12)", border: "rgba(74,143,255,0.5)" },
+  { text: "PARTY", color: "#4a8fff", bg: "rgba(74,143,255,0.12)", border: "rgba(74,143,255,0.5)" },
 ];
 
 const ITEMS = [
@@ -49,7 +49,7 @@ const ITEMS = [
     links: ["twitch.tv/videos/2041837265"],
     stats: [
       { tag: "FOL", value: "1.2K", color: "#9147ff" },
-      { tag: "VWR", value: "042",  color: "#bf94ff" },
+      { tag: "VWR", value: "042", color: "#bf94ff" },
     ],
   },
   {
@@ -57,7 +57,7 @@ const ITEMS = [
     links: ["instagram.com/p/C4xQmRrNk2a", "instagram.com/p/C3wLpBsOj7f", "instagram.com/reel/C2vKoArMi6e", "instagram.com/p/C1uJnZqLh5d", "instagram.com/reel/C0tImYpKg4c"],
     stats: [
       { tag: "FOL", value: "3.4K", color: "#e1306c" },
-      { tag: "PST", value: "128",  color: "#f77737" },
+      { tag: "PST", value: "128", color: "#f77737" },
     ],
   },
   {
@@ -65,13 +65,13 @@ const ITEMS = [
     links: ["tiktok.com/@yourhandle/video/7318492016374859054", "tiktok.com/@yourhandle/video/7305837261940183342", "tiktok.com/@yourhandle/video/7291046385720348974", "tiktok.com/@yourhandle/video/7278392047163820334", "tiktok.com/@yourhandle/video/7264819203847165742", "tiktok.com/@yourhandle/video/7251047382916430126", "tiktok.com/@yourhandle/video/7237294018463851822"],
     stats: [
       { tag: "FOL", value: "8.9K", color: "#00f2ea" },
-      { tag: "LKS", value: "52K",  color: "#ff0050" },
+      { tag: "LKS", value: "52K", color: "#ff0050" },
     ],
   },
 ];
 
 export default function AboutMe() {
-  const [active, setActive]   = useState(0);
+  const [active, setActive] = useState(0);
   const [mounted, setMounted] = useState(false);
   const [revealed, setRevealed] = useState(false);
   const navigate = useNavigate();

@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
 const ITEMS = [
-  { id: "about",   label: "ABOUT ME",      page: "about",   fontSize: 80, offsetX: 0,  offsetY: 0,  skew: -6,  skewY: 10  },
-  { id: "resume",  label: "RESUME",        page: "resume",  fontSize: 66, offsetX: 20, offsetY: 8,  skew: -11, skewY: -10 },
-  { id: "github",  label: "GITHUB LINK",   page: "github",  fontSize: 68, offsetX: 8, offsetY: 6,  skew: 0, skewY: -4  },
-  { id: "socials", label: "SOCIALS",       page: "socials", fontSize: 74, offsetX: 16, offsetY: 8,  skew: -3,  skewY: 5   },
-  { id: "sideproj",label: "SIDE PROJECTS", page: "sideproj",fontSize: 56, offsetX: 10, offsetY: 6,  skew: -4,  skewY: 7   },
+  { id: "about", label: "ABOUT ME", page: "about", fontSize: 80, offsetX: 0, offsetY: 0, skew: -6, skewY: 10 },
+  { id: "resume", label: "RESUME", page: "resume", fontSize: 66, offsetX: 20, offsetY: 8, skew: -11, skewY: -10 },
+  { id: "github", label: "GITHUB LINK", page: "github", fontSize: 68, offsetX: 8, offsetY: 6, skew: 0, skewY: -4 },
+  { id: "socials", label: "SOCIALS", page: "socials", fontSize: 74, offsetX: 16, offsetY: 8, skew: -3, skewY: 5 },
+  { id: "sideproj", label: "SIDE PROJECTS", page: "sideproj", fontSize: 56, offsetX: 10, offsetY: 6, skew: -4, skewY: 7 },
 ];
 
 const CLIP_SHAPES = [
@@ -33,9 +33,9 @@ export default function P3Menu({ onNavigate }) {
 
   useEffect(() => {
     const onKey = (e) => {
-      if (e.key === "ArrowUp")   activate(Math.max(0, active - 1));
+      if (e.key === "ArrowUp") activate(Math.max(0, active - 1));
       if (e.key === "ArrowDown") activate(Math.min(ITEMS.length - 1, active + 1));
-      if (e.key === "Enter")     onNavigate?.(ITEMS[active].page);
+      if (e.key === "Enter") onNavigate?.(ITEMS[active].page);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
@@ -182,10 +182,10 @@ export default function P3Menu({ onNavigate }) {
         .p3-hint-row {
           display: flex; align-items: center; gap: 8px;
           font-size: 13px; letter-spacing: 2px;
-          color: rgba(255,255,255,0.28);
+          color: rgba(255,255,255,0.85);
         }
         .p3-hint-key {
-          border: 1px solid rgba(255,255,255,0.2);
+          border: 1px solid rgba(255,255,255,0.8);
           border-radius: 3px;
           padding: 1px 6px; font-size: 11px;
         }
@@ -216,8 +216,8 @@ export default function P3Menu({ onNavigate }) {
 
       <div className="p3-overlay">
         <div className="p3-name-tag">
-          <span>jade's</span>
-          <span>persona</span>
+          <span>Raj's</span>
+          <span>_persona</span>
         </div>
         <div className="p3-stripe" />
         <div className="p3-stripe2" />

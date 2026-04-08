@@ -1,4 +1,5 @@
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom'
+import { useEffect, useRef } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import menuVideo from './assets/Mainn.mp4'
 import main1 from './assets/main1.mp4'
@@ -14,9 +15,20 @@ import './App.css'
 
 function MenuScreen() {
   const navigate = useNavigate()
+
   return (
     <div id="menu-screen">
-      <video src={menuVideo} autoPlay loop muted playsInline />
+      <div 
+        dangerouslySetInnerHTML={{ __html: `
+          <video 
+            src="${menuVideo}" 
+            autoplay 
+            loop 
+            muted 
+            playsinline
+          ></video>
+        `}} 
+      />
       <P3Menu onNavigate={(page) => navigate(`/${page}`)} />
     </div>
   )
