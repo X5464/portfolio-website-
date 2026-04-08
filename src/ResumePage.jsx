@@ -2,22 +2,97 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ITEMS = [
-  { id: "i", badge: "I", title: "EDUCATION", subtitle: "University / Coursework", rank: 3 },
-  { id: "ii", badge: "II", title: "SKILLS", subtitle: "Frontend / Design / UI", rank: 4 },
-  { id: "iii", badge: "III", title: "PROJECTS", subtitle: "Featured Work", rank: 5 },
-  { id: "iv", badge: "IV", title: "EXPERIENCE", subtitle: "Internships / Roles", rank: 2 },
+  { id: "i", badge: "I", title: "EDUCATION", subtitle: "ACADEMIC / THEORETICAL BASE", rank: 1 },
+  { id: "ii", badge: "II", title: "SKILLS", subtitle: "OFFENSIVE / DEFENSIVE ARSENAL", rank: 2 },
+  { id: "iii", badge: "III", title: "PROJECTS", subtitle: "DEPLOYED ARCHITECTURE", rank: 3 },
+  { id: "iv", badge: "IV", title: "EXPERIENCE", subtitle: "FIELD OPERATIONS", rank: 4 },
+  { id: "v", badge: "V", title: "CERTIFICATIONS", subtitle: "PROFESSIONAL CREDENTIALS", rank: 5 },
 ];
 
-const EDUCATION_ROWS = [
-  { index: "01", title: "General Education", status: "Complete" },
-  { index: "02", title: "Computer Science Core", status: "In Progress" },
-  { index: "03", title: "Elective Track", status: "Queued" },
-  { index: "04", title: "Capstone Prep", status: "Pending" },
+const PANEL_CONTENT = [
+  {
+    index: "01",
+    title: "EDUCATION LOG",
+    progress: "7/5",
+    rows: [
+      { index: "01", title: "Jain University: BCA Cybersecurity  : 8.0/10.0 SGPA", status: "IN PROGRESS" },
+      { index: "02", title: "IIT Mandi: CSE & Adv. Tech Minor  : 5.8/10.0 CGPA", status: "COMPLETED" },
+      { index: "03", title: "HM Education Centre: Class 12 CBSE  : 70.20%", status: "COMPLETED" },
+    ],
+    details: [
+      "* Maintaining an 8.0 SGPA while balancing dual-enrollment coursework.",
+      "Merging core computer science fundamentals with advanced cybersecurity theory.",
+      "Actively engaged as a Core Team Member in the AWS Cloud Club."
+    ]
+  },
+  {
+    index: "02",
+    title: "SKILLS ARSENAL",
+    progress: "4/4",
+    rows: [
+      { index: "01", title: "Offensive Tooling (Python, Bash, C)", status: "MASTERED" },
+      { index: "02", title: "Infrastructure (AWS, Linux, Git)", status: "ACTIVE" },
+      { index: "03", title: "Blue Team Triage (Threat Hunting)", status: "ACTIVE" },
+      { index: "04", title: "Frontend (TypeScript, Web Dev)", status: "EQUIPPED" }
+    ],
+    details: [
+      "* A balanced loadout of Red Team attack scripting and Blue Team defense mechanisms.",
+      "Highly capable of bridging the gap between raw terminal environments and full-stack web deployments.",
+      "Focused on automation, RESTful API integration, and secure systems architecture."
+    ]
+  },
+  {
+    index: "03",
+    title: "PROJECTS DEPLOYED",
+    progress: "4/4",
+    rows: [
+      { index: "01", title: "SENTINEL AI (Live CTI Dashboard)", status: "DEPLOYED" },
+      { index: "02", title: "VARS AGRI NOVA (Offline IoT Hardware)", status: "AWARDED 2nd-runner up & 1ST" },
+      { index: "03", title: "SPIDEY (Automated OSINT Crawler)", status: "OPERATIONAL" },
+      { index: "04", title: "IC POKÉMON (Constitutional RPG)", status: "DEPLOYED" },
+      { index: "05", title: "SPIDERWEB (Port, Subdomain, Hash, PDF CRACKER AND LOCKER) ALL IN ONE", status: "OPERATIONAL" }
+    ],
+    details: [
+      "* Translating theoretical vulnerabilities into actionable, scalable architecture.",
+      "Secured 2ND-runner Up & 1st Place at JAIN LaunchPad & Research Horizons 2025 for decentralized offline hardware integration."
+    ]
+  },
+  {
+    index: "04",
+    title: "FIELD EXPERIENCE",
+    progress: "4/4",
+    rows: [
+      { index: "01", title: "InLighnX (Offensive Cyber Intern)", status: "COMPLETE" },
+      { index: "02", title: "Elevate Labs (Blue Team Intern)", status: "COMPLETE" },
+      { index: "03", title: "Forage AIG/Mastercard (Security Analyst)", status: "COMPLETE" },
+      { index: "04", title: "Teachnook / IIT Roorkee (Mentee)", status: "COMPLETE" }
+    ],
+    details: [
+      "* Over 4 active deployments in professional operational environments.",
+      "Transitioned offensive hacking techniques into rigorous software triage, security auditing, and live threat feed management.",
+      "Architected cohesive web suites and custom Python tools for enterprise use."
+    ]
+  },
+  {
+    index: "05",
+    title: "CERTIFICATIONS LOG",
+    progress: "7/7",
+    rows: [
+      { index: "01", title: "Google Foundations of Cybersecurity", status: "ACQUIRED" },
+      { index: "02", title: "Cisco Introduction to Cybersecurity", status: "ACQUIRED" },
+      { index: "03", title: "IIT Madras Python Course", status: "ACQUIRED" },
+      { index: "04", title: "AWS APAC Solutions Architecture", status: "ACQUIRED" },
+      { index: "05", title: "McKinsey Forward Program", status: "ACQUIRED" },
+      { index: "06", title: "IBM Collaborate Effectively", status: "ACQUIRED" },
+      { index: "07", title: "British Council Leadership Skills", status: "ACQUIRED" }
+    ],
+    details: []
+  }
 ];
 
 export default function ResumePage({ src }) {
   const navigate = useNavigate();
-  const [active, setActive] = useState(1);
+  const [active, setActive] = useState(0);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -105,6 +180,32 @@ export default function ResumePage({ src }) {
         .resume-list-tag.mounted {
           opacity: 1;
           transform: translateX(0);
+        }
+
+        .resume-download-btn {
+          font-family: 'Bebas Neue', sans-serif;
+          font-size: 26px;
+          letter-spacing: 1.5px;
+          color: #f6fbff;
+          text-decoration: none;
+          padding: 6px 18px;
+          margin-bottom: 12px;
+          background: #c4001a;
+          clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0% 100%);
+          box-shadow: inset 0 0 0 1px rgba(255,255,255,0.2), 6px 6px 0 rgba(0,0,0,0.4);
+          transition: transform 0.2s ease, background 0.2s ease;
+          opacity: 0;
+          transform: translateX(20px);
+          pointer-events: all;
+        }
+        .resume-download-btn.mounted {
+          opacity: 1;
+          transform: translateX(0);
+          transition: opacity 0.4s ease 0.1s, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;
+        }
+        .resume-download-btn:hover {
+          background: #e03d31;
+          transform: translateX(0) translateY(-2px);
         }
 
         .resume-card-wrap {
@@ -327,18 +428,19 @@ export default function ResumePage({ src }) {
         }
         .resume-detail-row-title {
           font-family: 'Anton', sans-serif;
-          font-size: 28px;
-          line-height: 1;
+          font-size: 20px;
+          line-height: 1.1;
+          letter-spacing: 0.5px;
           color: #f2fcff;
         }
         .resume-detail-status {
           font-family: 'Bebas Neue', sans-serif;
-          font-size: 22px;
+          font-size: 18px;
           line-height: 1;
           letter-spacing: 1.1px;
           color: #06133b;
           background: #8df6ff;
-          padding: 7px 12px;
+          padding: 5px 10px;
           clip-path: polygon(0 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
         }
         .resume-detail-bottom {
@@ -362,9 +464,10 @@ export default function ResumePage({ src }) {
           gap: 10px;
         }
         .resume-detail-bullet {
-          font-family: 'Anton', sans-serif;
-          font-size: 21px;
-          line-height: 1.15;
+          font-family: 'Bebas Neue', sans-serif;
+          font-size: 20px;
+          line-height: 1.25;
+          letter-spacing: 1px;
           color: #edfaff;
         }
 
@@ -372,7 +475,17 @@ export default function ResumePage({ src }) {
 
       <div className="resume-overlay">
         <div className="resume-stack">
-          <div className={`resume-list-tag${mounted ? " mounted" : ""}`}>LIST</div>
+          <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', paddingRight: '12px' }}>
+            <div className={`resume-list-tag${mounted ? " mounted" : ""}`}>LIST</div>
+            <a 
+              href="/resume.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={`resume-download-btn${mounted ? " mounted" : ""}`}
+            >
+              DOWNLOAD RESUME
+            </a>
+          </div>
           {ITEMS.map((item, index) => (
             <div
               key={item.id}
@@ -404,16 +517,16 @@ export default function ResumePage({ src }) {
           ))}
         </div>
 
-        {active === 0 && (
+        {active !== null && PANEL_CONTENT[active] && (
           <div className="resume-detail-panel">
             <div className="resume-detail-top">
-              <div className="resume-detail-top-index">01</div>
-              <div className="resume-detail-top-title">EDUCATION LOG</div>
-              <div className="resume-detail-top-progress">7/5</div>
+              <div className="resume-detail-top-index">{PANEL_CONTENT[active].index}</div>
+              <div className="resume-detail-top-title">{PANEL_CONTENT[active].title}</div>
+              <div className="resume-detail-top-progress">{PANEL_CONTENT[active].progress}</div>
             </div>
 
             <div className="resume-detail-list">
-              {EDUCATION_ROWS.map((row) => (
+              {PANEL_CONTENT[active].rows.map((row) => (
                 <div className="resume-detail-row" key={row.index}>
                   <div className="resume-detail-row-index">{row.index}</div>
                   <div className="resume-detail-row-title">{row.title}</div>
@@ -422,14 +535,16 @@ export default function ResumePage({ src }) {
               ))}
             </div>
 
-            <div className="resume-detail-bottom">
-              <div className="resume-detail-bottom-title">DETAILS</div>
-              <div className="resume-detail-bullets">
-                <div className="resume-detail-bullet">- Maintain progress across required classes and supporting work.</div>
-                <div className="resume-detail-bullet">- Track portfolio-ready projects tied to coursework and labs.</div>
-                <div className="resume-detail-bullet">- Keep materials prepared for internships, research, and review.</div>
+            {PANEL_CONTENT[active].details && PANEL_CONTENT[active].details.length > 0 && (
+              <div className="resume-detail-bottom">
+                <div className="resume-detail-bottom-title">DETAILS</div>
+                <div className="resume-detail-bullets">
+                  {PANEL_CONTENT[active].details.map((bullet, i) => (
+                    <div className="resume-detail-bullet" key={i}>{bullet}</div>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         )}
 
