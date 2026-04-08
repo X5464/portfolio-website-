@@ -6,7 +6,6 @@ const ITEMS = [
   { id: "ii", badge: "II", title: "SKILLS", subtitle: "OFFENSIVE / DEFENSIVE ARSENAL", rank: 2 },
   { id: "iii", badge: "III", title: "PROJECTS", subtitle: "DEPLOYED ARCHITECTURE", rank: 3 },
   { id: "iv", badge: "IV", title: "EXPERIENCE", subtitle: "FIELD OPERATIONS", rank: 4 },
-  { id: "v", badge: "V", title: "CERTIFICATIONS", subtitle: "PROFESSIONAL CREDENTIALS", rank: 5 },
 ];
 
 const PANEL_CONTENT = [
@@ -72,21 +71,6 @@ const PANEL_CONTENT = [
       "Transitioned offensive hacking techniques into rigorous software triage, security auditing, and live threat feed management.",
       "Architected cohesive web suites and custom Python tools for enterprise use."
     ]
-  },
-  {
-    index: "05",
-    title: "CERTIFICATIONS LOG",
-    progress: "7/7",
-    rows: [
-      { index: "01", title: "Google Foundations of Cybersecurity", status: "ACQUIRED" },
-      { index: "02", title: "Cisco Introduction to Cybersecurity", status: "ACQUIRED" },
-      { index: "03", title: "IIT Madras Python Course", status: "ACQUIRED" },
-      { index: "04", title: "AWS APAC Solutions Architecture", status: "ACQUIRED" },
-      { index: "05", title: "McKinsey Forward Program", status: "ACQUIRED" },
-      { index: "06", title: "IBM Collaborate Effectively", status: "ACQUIRED" },
-      { index: "07", title: "British Council Leadership Skills", status: "ACQUIRED" }
-    ],
-    details: []
   }
 ];
 
@@ -469,6 +453,28 @@ export default function ResumePage({ src }) {
           line-height: 1.25;
           letter-spacing: 1px;
           color: #edfaff;
+        }
+
+        @media (max-width: 768px) {
+          .resume-list-tag { font-size: 52px; }
+          .resume-title { font-size: 14px; letter-spacing: 1px; }
+          .resume-subtitle { font-size: 10px; }
+          .resume-rank-number { font-size: 44px; }
+          .resume-rank-label { font-size: 18px; }
+          .resume-download-btn { font-size: 18px; padding: 4px 12px; }
+          .resume-detail-row {
+            grid-template-columns: 36px 1fr auto;
+            gap: 8px;
+            padding: 0 8px;
+            min-height: 44px;
+          }
+          .resume-detail-row-title { font-size: 14px; }
+          .resume-detail-row-index { font-size: 18px; }
+          .resume-detail-status { font-size: 10px; letter-spacing: 0.5px; }
+          .resume-detail-title { font-size: 28px; }
+          .resume-card-wrap { margin-bottom: 4px; }
+          .resume-detail-bullets { gap: 6px; }
+          .resume-detail-bullet { font-size: 14px; }
         }
 
       `}</style>

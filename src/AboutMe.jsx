@@ -694,6 +694,33 @@ export default function AboutMe() {
           border-radius: 3px;
           padding: 1px 6px; font-size: 11px;
         }
+
+        @media (max-width: 768px) {
+          /* Left menu bars */
+          .sc-bar { width: 88vw; height: 52px; }
+          .sc-bar-red { width: 88vw; }
+          .sc-bar-outer.active .sc-bar { height: 68px; }
+          .sc-bar-outer.active .sc-bar-red { height: 68px; }
+          .sc-char { max-width: 90px; left: 62px; }
+          .sc-main { padding-left: 38%; }
+
+          /* Reveal info panel */
+          .sc-reveal-panel {
+            top: 28vh;
+            left: 0;
+            width: 96vw;
+            height: 62vh;
+            clip-path: polygon(0 0, 100% 0, calc(100% - 32px) 100%, 0 100%);
+          }
+          .sc-reveal-upper-bar { padding-left: 12px; padding-right: 6%; }
+          .sc-reveal-lower-bar { font-size: 20px; padding-left: 14px; }
+          .sc-reveal-name-box { padding-left: 12px; }
+
+          /* Nav & footer */
+          .sc-right-nav { top: 12px; left: 50%; transform: translateX(-50%); font-size: 14px; }
+          .sc-footer { bottom: 8px; right: 8px; }
+          .sc-footer-row { font-size: 10px; }
+        }
       `}</style>
 
       <div className="sc-root" role="navigation">

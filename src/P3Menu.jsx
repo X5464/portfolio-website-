@@ -5,7 +5,7 @@ const ITEMS = [
   { id: "resume", label: "RESUME", page: "resume", fontSize: 66, offsetX: 20, offsetY: 8, skew: -11, skewY: -10 },
   { id: "github", label: "GITHUB LINK", page: "github", fontSize: 68, offsetX: 8, offsetY: 6, skew: 0, skewY: -4 },
   { id: "socials", label: "SOCIALS", page: "socials", fontSize: 74, offsetX: 16, offsetY: 8, skew: -3, skewY: 5 },
-  { id: "sideproj", label: "SIDE PROJECTS", page: "sideproj", fontSize: 56, offsetX: 10, offsetY: 6, skew: -4, skewY: 7 },
+  { id: "certs", label: "CERTIFICATES", page: "certs", fontSize: 56, offsetX: 10, offsetY: 6, skew: -4, skewY: 7 },
 ];
 
 const CLIP_SHAPES = [
@@ -211,6 +211,25 @@ export default function P3Menu({ onNavigate }) {
         }
         .p3-name-tag span:first-child {
           color: rgba(0, 0, 0, 0.86);
+        }
+
+        @media (max-width: 768px) {
+          .p3-menu {
+            padding: 20px 12px;
+            transform: scale(0.55);
+            transform-origin: center center;
+          }
+          .p3-name-tag {
+            font-size: 52px;
+            top: 10px;
+            left: 8px;
+          }
+          .p3-hint {
+            bottom: 10px;
+            right: 10px;
+            font-size: 10px;
+          }
+          .p3-hint-row { font-size: 10px; }
         }
       `}</style>
 

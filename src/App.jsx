@@ -11,6 +11,9 @@ import ResumePage from './ResumePage'
 import PageTransition from './PageTransition'
 import Socials from './Socials'
 import AboutMe from './AboutMe'
+import Certs from './Certs'
+import WelcomeModal from './WelcomeModal'
+import TouchNav from './TouchNav'
 import './App.css'
 
 function MenuScreen() {
@@ -51,11 +54,20 @@ function AnimatedRoutes() {
         <Route path="/socials" element={
           <PageTransition variant="socials"><Socials /></PageTransition>
         } />
+        <Route path="/certs" element={
+          <PageTransition variant="socials"><Certs /></PageTransition>
+        } />
       </Routes>
     </AnimatePresence>
   )
 }
 
 export default function App() {
-  return <AnimatedRoutes />
+  return (
+    <>
+      <TouchNav />
+      <WelcomeModal />
+      <AnimatedRoutes />
+    </>
+  );
 }

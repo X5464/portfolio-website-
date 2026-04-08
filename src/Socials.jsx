@@ -13,42 +13,56 @@ const CHARS = [char1, char2, char3];
 
 const ROLES = [
   { text: "LEADER", color: "#e8c100", bg: "rgba(232,193,0,0.12)", border: "rgba(232,193,0,0.5)" },
-  { text: "PARTY",  color: "#4a8fff", bg: "rgba(74,143,255,0.12)", border: "rgba(74,143,255,0.5)" },
-  { text: "PARTY",  color: "#4a8fff", bg: "rgba(74,143,255,0.12)", border: "rgba(74,143,255,0.5)" },
+  { text: "PARTY", color: "#4a8fff", bg: "rgba(74,143,255,0.12)", border: "rgba(74,143,255,0.5)" },
+  { text: "PARTY", color: "#4a8fff", bg: "rgba(74,143,255,0.12)", border: "rgba(74,143,255,0.5)" },
 ];
 
 const ITEMS = [
   {
-    id: "twitch", label: "TWITCH", handle: "@yourname", href: "https://twitch.tv/yourname", icon: "🎮", barIcon: icon1, bars: 1, newBars: [0], counts: ["56"],
-    links: ["twitch.tv/videos/2041837265"],
+    id: "linkedin", label: "LINKEDIN", handle: "@rajarshi-cybersecurity", href: "https://www.linkedin.com/in/rajarshi-cybersecurity/", icon: "💼", barIcon: icon1, bars: 4, newBars: [0],
+    links: [
+      { text: "LINKEDIN ACCOUNT", pillLabel: "STAT", pillValue: "ACTIVE", href: "https://www.linkedin.com/in/rajarshi-cybersecurity/" },
+      { text: "PROFESSIONAL NETWORK & ENDORSEMENTS", pillLabel: "CON", pillValue: "840", href: null },
+      { text: "EXPERIENCE & CERTIFICATION LOGS", pillLabel: "NET", pillValue: "LIVE", href: null },
+      { text: "DIRECT MESSAGING AND INQUIRIES", pillLabel: "MAIL", pillValue: "OPEN", href: "mailto:rajarshi7474@gmail.com" },
+    ],
     stats: [
-      { tag: "FOL", value: "1.2K", color: "#9147ff" },
-      { tag: "VWR", value: "042",  color: "#bf94ff" },
+      { tag: "CON", value: "840", color: "#0077b5" },
+      { tag: "NET", value: "LIVE", color: "#00a0dc" },
     ],
   },
   {
-    id: "instagram", label: "INSTAGRAM", handle: "@yourhandle", href: "https://instagram.com/yourhandle", icon: "📷", barIcon: icon2, bars: 5, newBars: [1, 2], counts: ["3.4M", "2.5M", "676K", "412K", "198K"],
-    links: ["instagram.com/p/C4xQmRrNk2a", "instagram.com/p/C3wLpBsOj7f", "instagram.com/reel/C2vKoArMi6e", "instagram.com/p/C1uJnZqLh5d", "instagram.com/reel/C0tImYpKg4c"],
+    id: "instagram", label: "INSTAGRAM", handle: "@_.optimus_prime.exe", href: "https://www.instagram.com/_.optimus_prime.exe", icon: "📷", barIcon: icon2, bars: 3, newBars: [0],
+    links: [
+      { text: "INSTAGRAM ACCOUNT ", pillLabel: "STAT", pillValue: "ACTIVE", href: "https://www.instagram.com/_.optimus_prime.exe" },
+      { text: "WATERCOLOR & PENCIL SKETCH GALLERY", pillLabel: "TYPE", pillValue: "VISUAL", href: "https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDE1MzAyOTgwNDc2Njk1?story_media_id=3032502774085131252&igsh=MXBmeDMwaWI5OTA2OQ==" },
+      { text: "TRAVEL EXPEDITIONS: THAILAND", pillLabel: "LOC", pillValue: "THAI", href: null },
+    ],
     stats: [
-      { tag: "FOL", value: "3.4K", color: "#e1306c" },
-      { tag: "PST", value: "128",  color: "#f77737" },
+      { tag: "FOL", value: "350", color: "#e1306c" },
+      { tag: "PST", value: "04", color: "#f77737" },
     ],
   },
   {
-    id: "tiktok", label: "TIKTOK", handle: "@yourhandle", href: "https://tiktok.com/@yourhandle", icon: "🎵", barIcon: icon3, bars: 7, newBars: [0, 3, 5, 6], counts: ["5.1M", "3.7M", "2.2M", "1.4M", "831K", "490K", "217K"],
-    links: ["tiktok.com/@yourhandle/video/7318492016374859054", "tiktok.com/@yourhandle/video/7305837261940183342", "tiktok.com/@yourhandle/video/7291046385720348974", "tiktok.com/@yourhandle/video/7278392047163820334", "tiktok.com/@yourhandle/video/7264819203847165742", "tiktok.com/@yourhandle/video/7251047382916430126", "tiktok.com/@yourhandle/video/7237294018463851822"],
+    id: "tryhackme", label: "TRYHACKME", handle: "@OmegaR [PATHFINDER]", href: "https://tryhackme.com/p/OmegaR", icon: "🔴", barIcon: icon3, bars: 4, newBars: [0],
+    links: [
+      { text: "TRYHACKME ACCOUNT : OMEGAR ", pillLabel: "STAT", pillValue: "ACTIVE", href: "https://tryhackme.com/p/OmegaR" },
+      { text: "GLOBAL RANK — TOP 35% WORLDWIDE", pillLabel: "RANK", pillValue: "TOP 35%", href: null },
+      { text: "COMPLETED ROOMS: 14 — BADGES EARNED: 3", pillLabel: "PROG", pillValue: "14 RMS", href: null },
+      { text: "HCK4G CTF ENDURANCE EVENT — SECURED", pillLabel: "COMP", pillValue: "SECURED", href: null },
+    ],
     stats: [
-      { tag: "FOL", value: "8.9K", color: "#00f2ea" },
-      { tag: "LKS", value: "52K",  color: "#ff0050" },
+      { tag: "LVL", value: "0x3", color: "#ff0000" },
+      { tag: "BGE", value: "03", color: "#cc0000" },
     ],
   },
 ];
 
 export default function Socials() {
-  const [active, setActive]               = useState(0);
-  const [mounted, setMounted]             = useState(false);
+  const [active, setActive] = useState(0);
+  const [mounted, setMounted] = useState(false);
   const [activeInfoBar, setActiveInfoBar] = useState(0);
-  const [focus, setFocus]                 = useState("left"); // "left" | "right"
+  const [focus, setFocus] = useState("left"); // "left" | "right"
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -59,16 +73,20 @@ export default function Socials() {
   useEffect(() => {
     const onKey = (e) => {
       if (focus === "left") {
-        if (e.key === "ArrowUp")    setActive(i => Math.max(0, i - 1));
-        if (e.key === "ArrowDown")  setActive(i => Math.min(ITEMS.length - 1, i + 1));
+        if (e.key === "ArrowUp") setActive(i => Math.max(0, i - 1));
+        if (e.key === "ArrowDown") setActive(i => Math.min(ITEMS.length - 1, i + 1));
         if (e.key === "ArrowRight") { setFocus("right"); setActiveInfoBar(0); }
-        if (e.key === "Enter")      window.open(ITEMS[active].href, "_blank");
+        if (e.key === "Enter") window.open(ITEMS[active].href, "_blank");
       } else {
         const barCount = ITEMS[active].bars;
-        if (e.key === "ArrowUp")   setActiveInfoBar(i => Math.max(0, i - 1));
+        if (e.key === "ArrowUp") setActiveInfoBar(i => Math.max(0, i - 1));
         if (e.key === "ArrowDown") setActiveInfoBar(i => Math.min(barCount - 1, i + 1));
         if (e.key === "ArrowLeft") setFocus("left");
-        if (e.key === "Enter")     window.open("https://" + ITEMS[active].links[activeInfoBar], "_blank");
+        if (e.key === "Enter") {
+          const barLink = ITEMS[active].links[activeInfoBar]?.href;
+          if (barLink) window.open(barLink, "_blank");
+          else window.open(ITEMS[active].href, "_blank");
+        }
       }
       if ((e.key === "ArrowLeft" && focus === "left") || e.key === "Escape" || e.key === "Backspace") navigate(-1);
     };
@@ -450,24 +468,27 @@ export default function Socials() {
         .sc-info-bar-text {
           flex: 1;
           font-family: 'Bebas Neue', sans-serif;
-          font-size: 22px;
-          letter-spacing: 2px;
+          font-size: 17px;
+          letter-spacing: 1.5px;
           color: #111;
-          padding: 0 14px;
+          padding: 0 8px;
           user-select: none;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
         .sc-info-bar-box {
-          height: 70%;
+          height: 65%;
           background: #000;
           display: flex;
           align-items: center;
-          padding: 0 12px;
+          padding: 0 10px;
           font-family: 'Bebas Neue', sans-serif;
-          font-size: 20px;
+          font-size: 16px;
           letter-spacing: 1px;
           color: #fff;
           flex-shrink: 0;
-          border-radius: 6px;
+          border-radius: 4px;
           margin-right: 4px;
           user-select: none;
         }
@@ -484,12 +505,26 @@ export default function Socials() {
 
         .sc-info-bar-count {
           font-family: 'Bebas Neue', sans-serif;
-          font-size: 22px;
+          font-size: 18px;
           letter-spacing: 1px;
           color: #111;
-          margin-right: 80px;
+          margin-right: 16px;
           flex-shrink: 0;
           user-select: none;
+        }
+
+        .sc-acc-badge {
+          font-family: 'Bebas Neue', sans-serif;
+          font-size: 12px;
+          letter-spacing: 1.5px;
+          color: #fff;
+          background: #c4001a;
+          padding: 2px 8px;
+          margin-left: 8px;
+          clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);
+          flex-shrink: 0;
+          user-select: none;
+          animation: sc-arrow-right 1.2s ease-in-out infinite;
         }
 
         /* footer hints */
@@ -513,6 +548,35 @@ export default function Socials() {
           border: 1px solid rgba(255,255,255,0.8);
           border-radius: 3px;
           padding: 1px 6px; font-size: 11px;
+        }
+
+        @media (max-width: 768px) {
+          .sc-root { padding-left: 0; gap: 4px; }
+          .sc-bar { width: 92vw; height: 52px; }
+          .sc-bar-outer.active .sc-bar { height: 68px; }
+          .sc-bar-outer.active .sc-bar-red { height: 68px; }
+          .sc-bar-red { width: 92vw; }
+          .sc-label { font-size: 18px; letter-spacing: 2px; }
+          .sc-stat-num { font-size: 18px; }
+          .sc-stat-tag { font-size: 8px; }
+          .sc-char { max-width: 90px; left: 70px; }
+          .sc-main { padding-left: 40%; }
+          .sc-role { font-size: 26px; }
+
+          .sc-info-bar-wrap {
+            left: 0;
+            right: 0;
+            height: 44px;
+          }
+          .sc-info-bar-text { font-size: 13px; letter-spacing: 0.8px; }
+          .sc-info-bar-box { font-size: 11px; padding: 0 6px; }
+          .sc-info-bar-count { font-size: 13px; margin-right: 6px; }
+          .sc-acc-badge { font-size: 10px; padding: 1px 5px; }
+
+          .sc-right-nav { top: 16px; right: 10px; font-size: 18px; }
+          .sc-nav-label { font-size: 14px; }
+          .sc-footer { bottom: 8px; right: 8px; }
+          .sc-footer-row { font-size: 10px; }
         }
       `}</style>
 
@@ -575,7 +639,11 @@ export default function Socials() {
           className={`sc-info-bar-wrap${activeInfoBar === i ? " selected" : ""}`}
           key={`bar-${active}-${i}`}
           style={{ top: `${155 + i * 52}px`, animationDelay: `${i * 50}ms` }}
-          onClick={() => setActiveInfoBar(i)}
+          onClick={() => {
+            setActiveInfoBar(i);
+            const link = ITEMS[active].links[i]?.href;
+            if (link) window.open(link, "_blank");
+          }}
           onMouseEnter={() => setActiveInfoBar(i)}
         >
           {ITEMS[active].newBars.includes(i) && (
@@ -583,9 +651,10 @@ export default function Socials() {
           )}
           <div className="sc-info-bar">
             <img className="sc-info-bar-icon" src={ITEMS[active].barIcon} alt="" />
-            <span className="sc-info-bar-text">{ITEMS[active].links[i].slice(0, 10)}...</span>
-            <span className="sc-info-bar-box">VIEWS</span>
-            <span className="sc-info-bar-count">{ITEMS[active].counts[i]}</span>
+            <span className="sc-info-bar-text">{ITEMS[active].links[i].text}</span>
+            {i === 0 && <span className="sc-acc-badge">▶ LINK</span>}
+            <span className="sc-info-bar-box">{ITEMS[active].links[i].pillLabel}</span>
+            <span className="sc-info-bar-count">{ITEMS[active].links[i].pillValue}</span>
           </div>
         </div>
       ))}
