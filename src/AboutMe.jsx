@@ -16,16 +16,16 @@ const MAIN_IMAGES = [mainm, mainm2, mainf];
 
 const REVEAL_CONTENT = [
   {
+    name: "Name : Rajarshi Chakraborty",
+    major: "Major :  Cybersecurity · Computer Science",
     upper: [
       "Class: Offensive Security & Blue Team Defense",
-      "I bridge the gap between offensive security and Blue Team defense.",
-      "I leverage ethical hacking and threat intelligence to hunt down",
-      "vulnerabilities, then apply rigorous system audits and secure",
-      "architecture practices to fortify the infrastructure.",
-      "I know how to break systems, and exactly how to secure them."
+      "Bridging the gap between Red Team attacks & Blue Team defense.",
+      "I break systems using ethical hacking and threat intelligence,",
+      "then fortify them with audits and secure architecture.",
+      "I know how to break systems — and how to secure them."
     ],
-    lower: ["About me",
-    ]
+    lower: "About Me",
   },
   {
     upper: [
@@ -117,6 +117,12 @@ export default function AboutMe() {
       {revealed && <div key={`dim-${active}`} className="sc-dim" />}
       {revealed && (
         <div key={`panel-${active}`} className={`sc-reveal-panel${mounted ? " mounted" : ""}`}>
+          {REVEAL_CONTENT[active].name && (
+            <div className="sc-reveal-name-box">
+              <div className="sc-reveal-name">{REVEAL_CONTENT[active].name}</div>
+              <div className="sc-reveal-major">{REVEAL_CONTENT[active].major}</div>
+            </div>
+          )}
           <div className="sc-reveal-upper-bar">
             {REVEAL_CONTENT[active].upper.map((line) => (
               <div className="sc-reveal-upper-line" key={line}>{line}</div>
@@ -241,10 +247,10 @@ export default function AboutMe() {
 
         .sc-reveal-panel {
           position: absolute;
-          top: 44vh;
+          top: 36vh;
           left: -6vw;
           width: 88vw;
-          height: 60vh;
+          height: 56vh;
           z-index: 12;
           pointer-events: none;
           background:
@@ -276,10 +282,10 @@ export default function AboutMe() {
         }
         .sc-reveal-upper-bar {
           position: absolute;
-          top: 8%;
+          top: 27%;
           left: 0%;
           width: 100%;
-          height: 44%;
+          height: 40%;
           background: rgba(0, 0, 0, 0.92);
           clip-path: polygon(0 0, 100% 0, calc(100% - 22px) 100%, 0 100%);
           box-shadow: 0 0 0 1px rgba(255,255,255,0.06);
@@ -287,19 +293,53 @@ export default function AboutMe() {
           flex-direction: column;
           align-items: flex-start;
           justify-content: center;
-          gap: 6px;
+          gap: 4px;
           color: rgba(255, 255, 255, 0.95);
           text-align: left;
           padding-left: 25%;
           padding-right: 8%;
         }
 
+        .sc-reveal-name-box {
+          position: absolute;
+          top: 8%;
+          left: 0%;
+          width: 100%;
+          height: 18%;
+          background: rgba(0, 0, 0, 0.96);
+          clip-path: polygon(0 0, 100% 0, calc(100% - 22px) 100%, 0 100%);
+          box-shadow: inset 3px 0 0 #c4001a, 0 0 0 1px rgba(255,255,255,0.06);
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: center;
+          padding-left: 25%;
+          padding-right: 8%;
+          gap: 4px;
+          animation: sc-line-enter 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+        }
+        .sc-reveal-name {
+          font-family: 'Bebas Neue', sans-serif;
+          font-size: 28px;
+          letter-spacing: 3px;
+          color: #fff;
+          line-height: 1;
+        }
+        .sc-reveal-major {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 13px;
+          font-weight: 400;
+          letter-spacing: 1.5px;
+          color: #8ef5ff;
+          text-transform: uppercase;
+        }
+
         .sc-reveal-upper-line {
           font-family: 'Montserrat', sans-serif;
           font-weight: 400;
-          font-size: 19px;
-          letter-spacing: 0.4px;
-          line-height: 1.35;
+          font-size: 15px;
+          letter-spacing: 0.3px;
+          line-height: 1.3;
           text-shadow: 1px 1px 0px #000, 2px 2px 4px rgba(0,0,0,0.8);
           opacity: 0;
           transform: translateX(-15px);
@@ -310,10 +350,10 @@ export default function AboutMe() {
           animation-delay: 0.3s; 
           font-weight: 700; 
           color: #4a8fff; 
-          font-size: 22px; 
+          font-size: 17px; 
           text-transform: uppercase; 
-          letter-spacing: 1.5px;
-          margin-bottom: 4px;
+          letter-spacing: 1.2px;
+          margin-bottom: 2px;
         }
         .sc-reveal-upper-line:nth-child(2) { animation-delay: 0.38s; }
         .sc-reveal-upper-line:nth-child(3) { animation-delay: 0.46s; }
@@ -331,7 +371,7 @@ export default function AboutMe() {
 
         .sc-reveal-lower-bar {
           position: absolute;
-          top: 60%;
+          top: 70%;
           right: 0;
           width: 55%;
           height: 18%;
@@ -647,10 +687,10 @@ export default function AboutMe() {
         .sc-footer-row {
           display: flex; align-items: center; gap: 8px;
           font-size: 13px; letter-spacing: 2px;
-          color: rgba(255,255,255,0.22);
+          color: rgba(255,255,255,0.85);
         }
         .sc-footer-key {
-          border: 1px solid rgba(255,255,255,0.15);
+          border: 1px solid rgba(255,255,255,0.8);
           border-radius: 3px;
           padding: 1px 6px; font-size: 11px;
         }

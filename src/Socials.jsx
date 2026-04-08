@@ -507,10 +507,10 @@ export default function Socials() {
         .sc-footer-row {
           display: flex; align-items: center; gap: 8px;
           font-size: 13px; letter-spacing: 2px;
-          color: rgba(255,255,255,0.22);
+          color: rgba(255,255,255,0.85);
         }
         .sc-footer-key {
-          border: 1px solid rgba(255,255,255,0.15);
+          border: 1px solid rgba(255,255,255,0.8);
           border-radius: 3px;
           padding: 1px 6px; font-size: 11px;
         }

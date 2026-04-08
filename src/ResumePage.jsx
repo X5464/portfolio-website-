@@ -13,7 +13,7 @@ const PANEL_CONTENT = [
   {
     index: "01",
     title: "EDUCATION LOG",
-    progress: "7/5",
+    progress: "2/3",
     rows: [
       { index: "01", title: "Jain University: BCA Cybersecurity  : 8.0/10.0 SGPA", status: "IN PROGRESS" },
       { index: "02", title: "IIT Mandi: CSE & Adv. Tech Minor  : 5.8/10.0 CGPA", status: "COMPLETED" },
@@ -44,7 +44,7 @@ const PANEL_CONTENT = [
   {
     index: "03",
     title: "PROJECTS DEPLOYED",
-    progress: "4/4",
+    progress: "3/5",
     rows: [
       { index: "01", title: "SENTINEL AI (Live CTI Dashboard)", status: "DEPLOYED" },
       { index: "02", title: "VARS AGRI NOVA (Offline IoT Hardware)", status: "AWARDED 2nd-runner up & 1ST" },
@@ -477,9 +477,9 @@ export default function ResumePage({ src }) {
         <div className="resume-stack">
           <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', paddingRight: '12px' }}>
             <div className={`resume-list-tag${mounted ? " mounted" : ""}`}>LIST</div>
-            <a 
-              href="/resume.pdf" 
-              target="_blank" 
+            <a
+              href="/resume.pdf"
+              target="_blank"
               rel="noopener noreferrer"
               className={`resume-download-btn${mounted ? " mounted" : ""}`}
             >
